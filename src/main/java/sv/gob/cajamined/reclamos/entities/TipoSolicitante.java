@@ -34,11 +34,11 @@ public class TipoSolicitante implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_tipo_solicitante")
 	private Long idTipoSolicitante;
-	
+
 	@Column(name = "nombre_tipo_solicitante", length = 500, nullable = false)
 	private String nombreTipoSolicitante;
-	
+
 	@OneToMany(mappedBy = "tipoSolicitante", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tipoSolicitante")
-	private List<Solicitud> solicitanteList;
+	private List<Solicitud> solicitudList;
 }

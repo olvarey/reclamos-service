@@ -35,6 +35,43 @@ public class ReporteFallecido implements Serializable {
 	@Column(name = "id_reporte_fallecido")
 	private String idReporteFallecido;
 
+	// INFO NOTIFICA
+	@Column(name = "nombre_completo_notifica", length = 500, nullable = false)
+	private String nombreCompletoNotifica;
+
+	@Column(name = "dui_notifica", length = 15, nullable = false)
+	private String duiNotifica;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_expiracion_dui_notifica", nullable = false)
+	private Date fechaExpiracionpDUINotifica;
+
+	@Column(name = "nit_notifica", length = 15, nullable = true)
+	private String nitNotifica;
+
+	@Column(name = "direccion_notifica", nullable = true, columnDefinition = "text not null")
+	private String direccionNotifica;
+
+	@Column(name = "telefono_notifica", length = 15, nullable = true)
+	private String telefonoNotifica;
+
+	@Column(name = "celular_notifica", length = 15, nullable = true)
+	private String celularNotifica;
+
+	@Column(name = "email_notifica", length = 500, nullable = false)
+	private String emailNotifica;
+
+	// INFO ASEGURADO
+	@Column(name = "nombre_completo_asegurado", length = 500, nullable = false)
+	private String nombreCompletoAsegurado;
+
+	@Column(name = "lugar_trabajo_asegurado", length = 500, nullable = false)
+	private String lugarTrabajoAsegurado;
+
+	// INFO EXTRA
+	@Column(name = "observacion_notifica", nullable = true, columnDefinition = "text")
+	private String observacionNotifica;
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_reporte_fallecido", nullable = false)
 	private Date fechaReporteFallecido;
