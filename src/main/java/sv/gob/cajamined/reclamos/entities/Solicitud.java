@@ -2,7 +2,7 @@ package sv.gob.cajamined.reclamos.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -122,5 +122,5 @@ public class Solicitud implements Serializable {
 
 	@ManyToMany
 	@JoinTable(name = "solicitud_tipo_seguro", schema = "reclamos", joinColumns = @JoinColumn(name = "id_solicitud", foreignKey = @ForeignKey(name = "fk_solicitud_tipo_seguro_solicitud")), inverseJoinColumns = @JoinColumn(name = "id_tipo_seguro", foreignKey = @ForeignKey(name = "fk_solicitud_tipo_seguro_tipo_seguro")))
-	private List<TipoSeguro> tipoSegurosList;
+	private Set<TipoSeguro> tipoSegurosSet;
 }

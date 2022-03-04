@@ -1,7 +1,7 @@
 package sv.gob.cajamined.reclamos.entities;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,6 +36,6 @@ public class TipoSeguro implements Serializable {
 	@Column(name = "nombre_tipo_seguro", length = 500, nullable = false)
 	private String nombreTipoSeguro;
 
-	@ManyToMany(mappedBy = "tipoSegurosList")
-	private List<Solicitud> solicitudList;
+	@ManyToMany(mappedBy = "tipoSegurosSet")
+	private Set<Solicitud> solicitudSet;
 }
