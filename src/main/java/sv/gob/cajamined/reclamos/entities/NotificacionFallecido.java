@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReporteFallecido implements Serializable {
+public class NotificacionFallecido implements Serializable {
 
 	/**
 	 * 
@@ -32,8 +32,8 @@ public class ReporteFallecido implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_reporte_fallecido")
-	private String idReporteFallecido;
+	@Column(name = "id_notifica_fallecido")
+	private String idNotificacionFallecido;
 
 	// INFO NOTIFICA
 	@Column(name = "nombre_completo_notifica", length = 500, nullable = false)
@@ -73,7 +73,7 @@ public class ReporteFallecido implements Serializable {
 	private String observacionNotifica;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "fecha_reporte_fallecido", nullable = false)
+	@Column(name = "fecha_notifica_fallecido", nullable = false)
 	private Date fechaReporteFallecido;
 
 }
