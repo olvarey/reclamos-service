@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -44,9 +46,10 @@ public class Solicitud implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_expiracion_dui_solicitante", nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fechaExpiracionpDUISolicitante;
 
-	@Column(name = "nit_solicitante", length = 15, nullable = true)
+	@Column(name = "nit_solicitante", length = 20, nullable = true)
 	private String nitSolicitante;
 
 	@Column(name = "direccion_solicitante", nullable = true, columnDefinition = "text not null")
@@ -73,9 +76,10 @@ public class Solicitud implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_expiracion_dui_representado", nullable = true)
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fechaExpiracionpDUIRepresentado;
 
-	@Column(name = "nit_representado", length = 15, nullable = true)
+	@Column(name = "nit_representado", length = 20, nullable = true)
 	private String nitRepresentado;
 
 	@Column(name = "direccion_representado", nullable = true, columnDefinition = "text")
