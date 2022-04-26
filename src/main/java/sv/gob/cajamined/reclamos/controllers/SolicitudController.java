@@ -29,10 +29,8 @@ public class SolicitudController {
 
 	@PostMapping(value = "solicitud")
 	public void addSolicitante(@RequestBody Solicitud nuevaSolicitud) {
-		nuevaSolicitud.setFechaExpiracionpDUISolicitante(new Date());
 		nuevaSolicitud.setFechaRegistro(new Date());
-		nuevaSolicitud.setNombreCompletoAsegurado("JULIA DEMILDA GUEVARA DE BONILLA");
-		nuevaSolicitud.setLugarTrabajoAsegurado("San Salvador");
+		System.out.println(nuevaSolicitud.getFechaExpiracionpDUISolicitante());
 		solicitudRepo.save(nuevaSolicitud);
 	}
 
