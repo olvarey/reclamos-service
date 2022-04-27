@@ -30,7 +30,6 @@ public class SolicitudController {
 	@PostMapping(value = "solicitud")
 	public void addSolicitante(@RequestBody Solicitud nuevaSolicitud) {
 		nuevaSolicitud.setFechaRegistro(new Date());
-		System.out.println(nuevaSolicitud.getFechaExpiracionpDUISolicitante());
 		solicitudRepo.save(nuevaSolicitud);
 	}
 

@@ -12,8 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -46,7 +44,6 @@ public class Solicitud implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_expiracion_dui_solicitante", nullable = false)
-	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fechaExpiracionpDUISolicitante;
 
 	@Column(name = "nit_solicitante", length = 20, nullable = true)
@@ -76,7 +73,6 @@ public class Solicitud implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_expiracion_dui_representado", nullable = true)
-	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date fechaExpiracionpDUIRepresentado;
 
 	@Column(name = "nit_representado", length = 20, nullable = true)
@@ -95,8 +91,20 @@ public class Solicitud implements Serializable {
 	private String emailRepresentado;
 
 	// INFO ASEGURADO
+	@Column(name = "codigo_afiliado", length = 10, nullable = false)
+	private String codigoAfiliado;
+
+	@Column(name = "codigo_condicion", nullable = false)
+	private Long codigoCondicion;
+
 	@Column(name = "nombre_completo_asegurado", length = 500, nullable = false)
 	private String nombreCompletoAsegurado;
+
+	@Column(name = "dui_asegurado", length = 15, nullable = false)
+	private String duiAsegurado;
+
+	@Column(name = "nit_asegurado", length = 20, nullable = false)
+	private String nitAsegurado;
 
 	@Column(name = "lugar_trabajo_asegurado", length = 500, nullable = false)
 	private String lugarTrabajoAsegurado;
