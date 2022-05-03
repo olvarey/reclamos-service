@@ -62,9 +62,6 @@ public class Solicitud implements Serializable {
 	private String emailSolicitante;
 
 	// INFO REPRESENTADO
-	@Column(name = "menor_edad")
-	private Boolean menorEdad;
-
 	@Column(name = "nombre_completo_representado", length = 500, nullable = true)
 	private String nombreCompletoRepresentado;
 
@@ -87,8 +84,36 @@ public class Solicitud implements Serializable {
 	@Column(name = "celular_representado", length = 15, nullable = true)
 	private String celularRepresentado;
 
-	@Column(name = "email_representado", length = 500, nullable = false)
+	@Column(name = "email_representado", length = 500, nullable = true)
 	private String emailRepresentado;
+
+	// MADRE
+	@Column(name = "nombre_completo_madre_representado", length = 500, nullable = true)
+	private String nombreCompletoMadreRepresentado;
+
+	@Column(name = "dui_madre_representado", length = 15, nullable = true)
+	private String duiMadreRepresentado;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_expiracion_dui_madre_representado", nullable = true)
+	private Date fechaExpiracionpDUIMadreRepresentado;
+
+	@Column(name = "nit_madre_representado", length = 20, nullable = true)
+	private String nitMadreRepresentado;
+
+	// PADRE
+	@Column(name = "nombre_completo_padre_representado", length = 500, nullable = true)
+	private String nombreCompletoPadreRepresentado;
+
+	@Column(name = "dui_padre_representado", length = 15, nullable = true)
+	private String duiPadreRepresentado;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_expiracion_dui_padre_representado", nullable = true)
+	private Date fechaExpiracionpDUIPadreRepresentado;
+
+	@Column(name = "nit_padre_representado", length = 20, nullable = true)
+	private String nitPadreRepresentado;
 
 	// INFO ASEGURADO
 	@Column(name = "codigo_afiliado", length = 10, nullable = false)
