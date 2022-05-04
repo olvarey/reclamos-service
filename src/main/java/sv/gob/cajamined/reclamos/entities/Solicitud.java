@@ -36,8 +36,11 @@ public class Solicitud implements Serializable {
 	private Long idSolicitud;
 
 	// INFO SOLICITANTE
-	@Column(name = "nombre_completo_solicitante", length = 500, nullable = false)
-	private String nombreCompletoSolicitante;
+	@Column(name = "nombres_solicitante", length = 250, nullable = false)
+	private String nombresSolicitante;
+
+	@Column(name = "apellidos_solicitante", length = 250, nullable = false)
+	private String apellidosSolicitante;
 
 	@Column(name = "dui_solicitante", length = 15, nullable = false)
 	private String duiSolicitante;
@@ -62,8 +65,11 @@ public class Solicitud implements Serializable {
 	private String emailSolicitante;
 
 	// INFO REPRESENTADO
-	@Column(name = "nombre_completo_representado", length = 500, nullable = true)
-	private String nombreCompletoRepresentado;
+	@Column(name = "nombres_representado", length = 250, nullable = true)
+	private String nombresRepresentado;
+
+	@Column(name = "apellidos_representado", length = 250, nullable = true)
+	private String apellidosRepresentado;
 
 	@Column(name = "dui_representado", length = 15, nullable = true)
 	private String duiRepresentado;
@@ -88,8 +94,11 @@ public class Solicitud implements Serializable {
 	private String emailRepresentado;
 
 	// MADRE
-	@Column(name = "nombre_completo_madre_representado", length = 500, nullable = true)
-	private String nombreCompletoMadreRepresentado;
+	@Column(name = "nombres_madre_representado", length = 250, nullable = true)
+	private String nombresMadreRepresentado;
+
+	@Column(name = "apellidos_madre_representado", length = 250, nullable = true)
+	private String apellidosMadreRepresentado;
 
 	@Column(name = "dui_madre_representado", length = 15, nullable = true)
 	private String duiMadreRepresentado;
@@ -102,8 +111,11 @@ public class Solicitud implements Serializable {
 	private String nitMadreRepresentado;
 
 	// PADRE
-	@Column(name = "nombre_completo_padre_representado", length = 500, nullable = true)
-	private String nombreCompletoPadreRepresentado;
+	@Column(name = "nombres_padre_representado", length = 250, nullable = true)
+	private String nombresPadreRepresentado;
+
+	@Column(name = "apellidos_padre_representado", length = 250, nullable = true)
+	private String apellidosPadreRepresentado;
 
 	@Column(name = "dui_padre_representado", length = 15, nullable = true)
 	private String duiPadreRepresentado;
