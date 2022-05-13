@@ -14,7 +14,6 @@ public class DocumentoController {
     @Autowired
     private DocumentoRepo documentoRepo;
 
-
     @PostMapping(value = "partida-defuncion-asegurado")
     public void subirPartidaDefuncion(@RequestParam("partida-defuncion-asegurado") MultipartFile file, @RequestParam String duiSolicitante) throws Exception {
         Documento documento = new Documento();
